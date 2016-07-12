@@ -4,8 +4,8 @@ var Schema=mongoose.Schema;
 var weikeSchema=new Schema(
 {
 	word:String,
-	pron:String,
-	definition:[String]
+	pron:String
+//	definition:[String]
 	
 });
 
