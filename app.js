@@ -1,4 +1,3 @@
-//require( './models/weike' );
 
 var express = require('express');
 var path = require('path');
@@ -13,9 +12,13 @@ var users = require('./routes/users');
 var mongoose=require('mongoose');
 var api=require('./controllers/api.js');
 
+
 var app = express();
 
 mongoose.connect('mongodb://localhost/dictionary');
+
+require('./models/article.js');
+var articles=require('./controllers/articles');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +37,7 @@ app.use('/users', users);
 
 app.use('/list',api.list);
 
+app.get('/articles',articles.index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
