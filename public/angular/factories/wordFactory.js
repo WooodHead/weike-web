@@ -4,7 +4,7 @@ app.factory('wordFactory', function($http){
   var words=[];
   
   factory.getWords=function(callback){
-    $http.get('/words').then(function(data){
+    $http.get('/api/words').then(function(data){
       words=data.data;
       callback(data.data);
     });
