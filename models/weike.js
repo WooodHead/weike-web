@@ -9,4 +9,4 @@ var weikeSchema=new Schema(
 	
 });
 
-module.exports=mongoose.model('Weike',weikeSchema);
+module.exports=mongoose.model('test',weikeSchema);

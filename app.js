@@ -10,7 +10,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var mongoose=require('mongoose');
-var api=require('./controllers/api.js');
+var api=require('./api/api.js');
 
 
 var app = express();
@@ -18,7 +18,7 @@ var app = express();
 mongoose.connect('mongodb://localhost/dictionary');
 
 require('./models/article.js');
-var articles=require('./controllers/articles');
+var articles=require('./api/articles');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-app.use('/list',api.list);
+app.use('/words',api.list);
 
 app.get('/articles',articles.index);
 

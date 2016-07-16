@@ -1,5 +1,16 @@
-extends layout
+doctype html
 
-block content
-  h1= title
-  p Welcome to #{title}
+html(ng-app='myApp')
+  head
+    link(rel='stylesheet', href='/lib/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src="/lib/js/angular.js")
+    script(src="/lib/js/angular-route.js")
+    script(src="/angular/app.module.js")
+    script(src="/angular/factories/wordFactory.js")
+    
+  body
+    h1= title
+    p Welcome to #{title}
+    p {{1+2}}
+    div(ng-view)
